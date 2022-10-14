@@ -2,7 +2,9 @@ package com.sumin.numbercomposition.presentation.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.sumin.numbercomposition.R
 import com.sumin.numbercomposition.databinding.ActivityMainBinding
+import com.sumin.numbercomposition.presentation.fragment.WelcomeFragment
 
 class MainActivity : AppCompatActivity() {
     private var _binding: ActivityMainBinding? = null
@@ -13,6 +15,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        launchWelcomFragment()
+    }
+
+    private fun launchWelcomFragment(){
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.main_container,WelcomeFragment.newInstance())
+            .commit()
     }
 
     override fun onDestroy() {
