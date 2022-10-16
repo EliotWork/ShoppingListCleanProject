@@ -15,13 +15,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        launchWelcomFragment()
-    }
-
-    private fun launchWelcomFragment(){
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.main_container,WelcomeFragment.newInstance())
-            .commit()
     }
 
     override fun onDestroy() {

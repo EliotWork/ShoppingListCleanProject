@@ -5,9 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.sumin.numbercomposition.R
 import com.sumin.numbercomposition.databinding.FragmentWelcomeBinding
-import com.sumin.numbercomposition.presentation.fragment.ChooseLevelFragment.Companion.NAME
 
 class WelcomeFragment : Fragment() {
     private var _binding: FragmentWelcomeBinding? = null
@@ -31,20 +31,11 @@ class WelcomeFragment : Fragment() {
     }
 
     private fun launchChooseLevelFragment(){
-        requireActivity().supportFragmentManager.beginTransaction()
-            .replace(R.id.main_container,ChooseLevelFragment.newInstance())
-            .addToBackStack(NAME)
-            .commit()
+        findNavController().navigate(R.id.action_welcomeFragment_to_chooseLevelFragment2)
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-    }
-
-    companion object{
-        fun newInstance(): WelcomeFragment{
-            return WelcomeFragment()
-        }
     }
 }
