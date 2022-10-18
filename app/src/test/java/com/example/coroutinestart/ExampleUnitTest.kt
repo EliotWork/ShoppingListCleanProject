@@ -1,4 +1,4 @@
-package com.sumin.shoppinglist
+package com.example.coroutinestart
 
 import org.junit.Test
 

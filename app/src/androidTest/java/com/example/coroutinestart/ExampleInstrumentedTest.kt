@@ -1,4 +1,4 @@
-package com.sumin.shoppinglist
+package com.example.coroutinestart
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
