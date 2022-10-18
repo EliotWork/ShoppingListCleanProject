@@ -11,7 +11,7 @@ android {
 
 
     defaultConfig {
-        applicationId "com.sumin.numbercomposition"
+        applicationId "com.example.coroutinestart"
         minSdkVersion 24
         targetSdkVersion 33
         versionCode 1
