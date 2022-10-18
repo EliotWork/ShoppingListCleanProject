@@ -1,2 +1,2 @@
 # studies
-I'm use: Clean Architecture, viewModel, dataBinding, RecyclerView, FragmentManager, DiffUtill
+I'm use: coroutine
