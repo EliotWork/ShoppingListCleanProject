@@ -33,14 +33,11 @@ class MainActivity : AppCompatActivity() {
         binding.tvTemperature.text = temp.toString()
         binding.progress.isVisible = false
         binding.buttonLoad.isEnabled = true
-
-
     }
 
     private suspend fun loadCity(): String {
         delay(5000)
         return "Mosckow"
-
     }
 
     private suspend fun loadTemperature(city: String): Int {
