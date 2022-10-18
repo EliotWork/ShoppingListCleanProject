@@ -1,8 +1,6 @@
-<<<<<<< HEAD:app/src/androidTest/java/com/example/coroutinestart/ExampleInstrumentedTest.kt
+
 package com.example.coroutinestart
-=======
-package com.example.shoppinglist
->>>>>>> 8f4d2d1e0c00317f31c433681df1325aa140212b:app/src/androidTest/java/com/example/shoppinglist/ExampleInstrumentedTest.kt
+
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

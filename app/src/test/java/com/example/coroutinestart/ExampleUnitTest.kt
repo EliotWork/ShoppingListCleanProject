@@ -1,8 +1,6 @@
-<<<<<<< HEAD:app/src/test/java/com/example/coroutinestart/ExampleUnitTest.kt
+
 package com.example.coroutinestart
-=======
-package com.example.shoppinglist
->>>>>>> 8f4d2d1e0c00317f31c433681df1325aa140212b:app/src/test/java/com/example/shoppinglist/ExampleUnitTest.kt
+
 
 import org.junit.Test
 
