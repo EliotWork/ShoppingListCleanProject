@@ -1,7 +1,7 @@
-package com.example.coroutinestart.domain.usecases
+package com.example.numbercomposition.domain.usecases
 
-import com.example.coroutinestart.domain.entity.Question
-import com.example.coroutinestart.domain.repository.GameRepository
+import com.example.numbercomposition.domain.entity.Question
+import com.example.numbercomposition.domain.repository.GameRepository
 
 class GenerateQuestionUseCase(
     private val repository: GameRepository

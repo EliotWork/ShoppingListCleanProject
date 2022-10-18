@@ -1,8 +1,8 @@
-package com.example.coroutinestart.domain.repository
+package com.example.numbercomposition.domain.repository
 
-import com.example.coroutinestart.domain.entity.GameSettings
-import com.example.coroutinestart.domain.entity.Level
-import com.example.coroutinestart.domain.entity.Question
+import com.example.numbercomposition.domain.entity.GameSettings
+import com.example.numbercomposition.domain.entity.Level
+import com.example.numbercomposition.domain.entity.Question
 
 interface GameRepository {
     fun generateQuestion(

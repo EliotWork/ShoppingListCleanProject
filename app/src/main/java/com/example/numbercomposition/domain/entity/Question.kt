@@ -1,4 +1,4 @@
-package com.example.coroutinestart.domain.entity
+package com.example.numbercomposition.domain.entity
 
 data class Question(
     val sum: Int,

@@ -1,10 +1,10 @@
-package com.example.coroutinestart.presentation.viewModel.viewmodelFactory
+package com.example.numbercomposition.presentation.viewModel.viewmodelFactory
 
 import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.coroutinestart.domain.entity.Level
-import com.example.coroutinestart.presentation.viewModel.GameViewModel
+import com.example.numbercomposition.domain.entity.Level
+import com.example.numbercomposition.presentation.viewModel.GameViewModel
 
 class GameViewModelFactory(
     private val level: Level,

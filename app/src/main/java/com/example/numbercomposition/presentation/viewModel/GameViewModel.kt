@@ -1,18 +1,18 @@
-package com.example.coroutinestart.presentation.viewModel
+package com.example.numbercomposition.presentation.viewModel
 
 import android.app.Application
 import android.os.CountDownTimer
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.coroutinestart.R
-import com.example.coroutinestart.data.GameRepositoryImpl
-import com.example.coroutinestart.domain.entity.GameResult
-import com.example.coroutinestart.domain.entity.GameSettings
-import com.example.coroutinestart.domain.entity.Level
-import com.example.coroutinestart.domain.entity.Question
-import com.example.coroutinestart.domain.usecases.GenerateQuestionUseCase
-import com.example.coroutinestart.domain.usecases.GetGameSettingsUseCase
+import com.example.numbercomposition.R
+import com.example.numbercomposition.data.GameRepositoryImpl
+import com.example.numbercomposition.domain.entity.GameResult
+import com.example.numbercomposition.domain.entity.GameSettings
+import com.example.numbercomposition.domain.entity.Level
+import com.example.numbercomposition.domain.entity.Question
+import com.example.numbercomposition.domain.usecases.GenerateQuestionUseCase
+import com.example.numbercomposition.domain.usecases.GetGameSettingsUseCase
 
 class GameViewModel(
     private val application: Application,

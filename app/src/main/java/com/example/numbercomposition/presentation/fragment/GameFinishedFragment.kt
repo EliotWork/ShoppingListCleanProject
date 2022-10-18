@@ -1,4 +1,4 @@
-package com.example.coroutinestart.presentation.fragment
+package com.example.numbercomposition.presentation.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.example.coroutinestart.databinding.FragmentGameFinishedBinding
+import com.example.numbercomposition.databinding.FragmentGameFinishedBinding
 
 class GameFinishedFragment : Fragment() {
     private  val args by navArgs<GameFinishedFragmentArgs>()

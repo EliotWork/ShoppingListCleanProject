@@ -1,4 +1,4 @@
-package com.example.coroutinestart.domain.entity
+package com.example.numbercomposition.domain.entity
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

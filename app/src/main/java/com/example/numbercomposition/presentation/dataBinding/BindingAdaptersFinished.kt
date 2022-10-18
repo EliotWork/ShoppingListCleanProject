@@ -1,10 +1,10 @@
-package com.example.coroutinestart.presentation.dataBinding
+package com.example.numbercomposition.presentation.dataBinding
 
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
-import com.example.coroutinestart.R
-import com.example.coroutinestart.domain.entity.GameResult
+import com.example.numbercomposition.R
+import com.example.numbercomposition.domain.entity.GameResult
 
 
 @BindingAdapter("requiredAnswers")

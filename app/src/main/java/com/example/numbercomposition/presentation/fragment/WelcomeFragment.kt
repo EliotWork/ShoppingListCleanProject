@@ -1,4 +1,4 @@
-package com.example.coroutinestart.presentation.fragment
+package com.example.numbercomposition.presentation.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.coroutinestart.R
-import com.example.coroutinestart.databinding.FragmentWelcomeBinding
+import com.example.numbercomposition.R
+import com.example.numbercomposition.databinding.FragmentWelcomeBinding
 
 class WelcomeFragment : Fragment() {
     private var _binding: FragmentWelcomeBinding? = null

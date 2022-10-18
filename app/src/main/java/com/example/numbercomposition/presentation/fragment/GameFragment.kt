@@ -1,4 +1,4 @@
-package com.example.coroutinestart.presentation.fragment
+package com.example.numbercomposition.presentation.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,10 +8,10 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.example.coroutinestart.databinding.FragmentGameBinding
-import com.example.coroutinestart.domain.entity.GameResult
-import com.example.coroutinestart.presentation.viewModel.GameViewModel
-import com.example.coroutinestart.presentation.viewModel.viewmodelFactory.GameViewModelFactory
+import com.example.numbercomposition.databinding.FragmentGameBinding
+import com.example.numbercomposition.domain.entity.GameResult
+import com.example.numbercomposition.presentation.viewModel.GameViewModel
+import com.example.numbercomposition.presentation.viewModel.viewmodelFactory.GameViewModelFactory
 
 class GameFragment : Fragment() {
 

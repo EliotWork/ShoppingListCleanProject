@@ -1,9 +1,9 @@
-package com.example.coroutinestart.data
+package com.example.numbercomposition.data
 
-import com.example.coroutinestart.domain.entity.GameSettings
-import com.example.coroutinestart.domain.entity.Level
-import com.example.coroutinestart.domain.entity.Question
-import com.example.coroutinestart.domain.repository.GameRepository
+import com.example.numbercomposition.domain.entity.GameSettings
+import com.example.numbercomposition.domain.entity.Level
+import com.example.numbercomposition.domain.entity.Question
+import com.example.numbercomposition.domain.repository.GameRepository
 import kotlin.math.max
 import kotlin.math.min
 import kotlin.random.Random

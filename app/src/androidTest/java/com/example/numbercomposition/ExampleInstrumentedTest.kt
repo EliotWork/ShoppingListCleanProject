@@ -1,4 +1,4 @@
-package com.example.coroutinestart
+package com.example.numbercomposition
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

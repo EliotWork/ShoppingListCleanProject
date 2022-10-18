@@ -1,8 +1,8 @@
-package com.example.coroutinestart.presentation.activity
+package com.example.numbercomposition.presentation.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.coroutinestart.databinding.ActivityMainBinding
+import com.example.numbercomposition.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private var _binding: ActivityMainBinding? = null

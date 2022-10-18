@@ -1,4 +1,4 @@
-package com.example.coroutinestart.presentation.fragment
+package com.example.numbercomposition.presentation.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.coroutinestart.databinding.FragmentChooseLevelBinding
-import com.example.coroutinestart.domain.entity.Level
+import com.example.numbercomposition.databinding.FragmentChooseLevelBinding
+import com.example.numbercomposition.domain.entity.Level
 
 class ChooseLevelFragment : Fragment() {
     private var _binding: FragmentChooseLevelBinding? = null
