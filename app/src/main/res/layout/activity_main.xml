@@ -1,35 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.activity.fistActivity.MainActivity">
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context="com.example.servicetest.MainActivity"
+    >
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_shop_list"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_shop_enabled"/>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/button_add_shop_item"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/simple_service"
+        style="@style/ServiceButtonStyle"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:clickable="true"
-        android:contentDescription="@string/add_shop_item_content_description"
-        android:focusable="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_add" />
+        android:text="@string/service"
+        />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
-</layout>
+    <Button
+        android:id="@+id/foreground_service"
+        style="@style/ServiceButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/foreground_service"
+        />
+
+    <Button
+        android:id="@+id/intent_service"
+        style="@style/ServiceButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/intent_service"
+        />
+
+    <Button
+        android:id="@+id/job_dispatcher"
+        style="@style/ServiceButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/job_dispatcher"
+        />
+
+    <Button
+        android:id="@+id/job_intent_service"
+        style="@style/ServiceButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/job_intent_service"
+        />
+
+    <Button
+        android:id="@+id/alarm_manager"
+        style="@style/ServiceButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/alarm_manager"
+        />
+
+    <Button
+        android:id="@+id/work_manager"
+        style="@style/ServiceButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/work_manager"
+        />
+</LinearLayout>
