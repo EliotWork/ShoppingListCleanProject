@@ -13,12 +13,11 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
+import androidx.work.ExistingWorkPolicy
+import androidx.work.WorkManager
 import com.example.servicetest.databinding.ActivityMainBinding
-import com.example.servicetest.service.MyForegroundService
-import com.example.servicetest.service.MyIntentService
-import com.example.servicetest.service.MyJobService
+import com.example.servicetest.service.*
 import com.example.servicetest.service.MyJobService.Companion.JOB_ID
-import com.example.servicetest.service.MyService
 
 
 class MainActivity : AppCompatActivity() {
@@ -31,26 +30,31 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        binding.simpleService.setOnClickListener {
-            stopService(MyForegroundService.newIntent(this))
-            startService(Intent(MyService.newIntent(this,25)))
-        }
-        binding.foregroundService.setOnClickListener {
-            ContextCompat.startForegroundService(
-                this,
-                MyForegroundService.newIntent(this)
-            )
-        }
-        binding.intentService.setOnClickListener {
-            ContextCompat.startForegroundService(
-                this,
-                MyIntentService.newIntent(this)
-            )
-        }
-        binding.jobScheduler.setOnClickListener {
-            val componentName = ComponentName(this, MyJobService::class.java)
+        service()
+    }
 
-            val jobInfo = JobInfo.Builder(JOB_ID, componentName)
+    private fun service() = with(binding) {
+        simpleService.setOnClickListener {
+            stopService(MyForegroundService.newIntent(this@MainActivity))
+            startService(Intent(MyService.newIntent(this@MainActivity, 25)))
+        }
+        foregroundService.setOnClickListener {
+            ContextCompat.startForegroundService(
+                this@MainActivity,
+                MyForegroundService.newIntent(this@MainActivity)
+            )
+        }
+        intentService.setOnClickListener {
+            ContextCompat.startForegroundService(
+                this@MainActivity,
+                MyIntentService.newIntent(this@MainActivity)
+            )
+        }
+        jobScheduler.setOnClickListener {
+            val componentName = ComponentName(this@MainActivity, MyJobService::class.java)
+
+            val jobInfo = JobInfo.Builder(MyJobService.JOB_ID, componentName)
+                .setRequiresCharging(true)
                 .setRequiredNetworkType(JobInfo.NETWORK_TYPE_UNMETERED)
                 .build()
 
@@ -59,7 +63,20 @@ class MainActivity : AppCompatActivity() {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 val intent = MyJobService.newIntent(page++)
                 jobScheduler.enqueue(jobInfo, JobWorkItem(intent))
+            } else {
+                startService(MyCombinationService.newIntent(this@MainActivity, page++))
             }
+        }
+        jobIntentService.setOnClickListener {
+            MyJobIntentService.enqueue(this@MainActivity, page++)
+        }
+        workManager.setOnClickListener {
+            val workManager = WorkManager.getInstance(applicationContext)
+            workManager.enqueueUniqueWork(
+                MyWorkManager.WORK_NAME,
+                ExistingWorkPolicy.APPEND,
+                MyWorkManager.makeRequest(page++)
+            )
         }
     }
 }

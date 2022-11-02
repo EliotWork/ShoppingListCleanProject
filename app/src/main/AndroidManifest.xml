@@ -27,8 +27,12 @@
         <service android:name=".service.MyService"/>
         <service android:name=".service.MyForegroundService"/>
         <service android:name=".service.MyIntentService"/>
+        <service android:name=".service.MyCombinationService"/>
         <service
             android:name=".service.MyJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service
+            android:name=".service.MyJobIntentService"
             android:permission="android.permission.BIND_JOB_SERVICE" />
     </application>
 
