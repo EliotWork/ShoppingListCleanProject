@@ -1,4 +1,4 @@
-package com.example.servicetest
+package com.example.bitok
 
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package com.example.servicetest
+package com.example.bitok
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
