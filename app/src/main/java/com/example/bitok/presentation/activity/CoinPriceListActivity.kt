@@ -6,7 +6,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.bitok.presentation.viewModel.CoinViewModel
 import com.example.bitok.presentation.adapters.CoinInfoAdapter
-import com.example.bitok.data.model.CoinPriceInfo
+import com.example.bitok.data.network.model.CoinInfoDto
 import com.example.bitok.R
 import kotlinx.android.synthetic.main.activity_coin_prce_list.*
 
@@ -20,7 +20,7 @@ class CoinPriceListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_coin_prce_list)
         val adapter = CoinInfoAdapter(this)
         adapter.onCoinClickListener = object : CoinInfoAdapter.OnCoinClickListener {
-            override fun onCoinClick(coinPriceInfo: CoinPriceInfo) {
+            override fun onCoinClick(coinPriceInfo: CoinInfoDto) {
                 val intent = CoinDetailActivity.newIntent(
                     this@CoinPriceListActivity,
                     coinPriceInfo.fromSymbol

@@ -1,4 +1,4 @@
-package com.example.bitok.domain.usecase
+package com.example.bitok.domain.usecase.getusecase
 
 import com.example.bitok.domain.repository.CoinRepository
 
