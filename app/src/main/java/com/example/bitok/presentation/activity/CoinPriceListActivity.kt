@@ -3,21 +3,27 @@ package com.example.bitok.presentation.activity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.example.bitok.R
+import com.example.bitok.databinding.ActivityCoinPriceListBinding
 import com.example.bitok.domain.entity.CoinInfo
 import com.example.bitok.presentation.adapters.CoinInfoAdapter
 import com.example.bitok.presentation.viewModel.CoinViewModel
-import kotlinx.android.synthetic.main.activity_coin_prce_list.*
-
 
 class CoinPriceListActivity : AppCompatActivity() {
 
     private lateinit var viewModel: CoinViewModel
 
+    private var _binding: ActivityCoinPriceListBinding? = null
+    private val binding: ActivityCoinPriceListBinding
+    get() = _binding!!
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_coin_prce_list)
-        val adapter = CoinInfoAdapter(this)
+        _binding = ActivityCoinPriceListBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        adapter()
+    }
+
+    private fun adapter()= with(binding){
+        val adapter = CoinInfoAdapter(this@CoinPriceListActivity)
         adapter.onCoinClickListener = object : CoinInfoAdapter.OnCoinClickListener {
             override fun onCoinClick(coinPriceInfo: CoinInfo) {
                 val intent = CoinDetailActivity.newIntent(
@@ -27,10 +33,15 @@ class CoinPriceListActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         }
-        rvCoinPriceList.adapter = adapter
-        viewModel = ViewModelProvider(this)[CoinViewModel::class.java]
-        viewModel.coinInfoList.observe(this) {
+        binding.rvCoinPriceList.adapter = adapter
+        viewModel = ViewModelProvider(this@CoinPriceListActivity)[CoinViewModel::class.java]
+        viewModel.coinInfoList.observe(this@CoinPriceListActivity) {
             adapter.coinInfoList = it
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 }

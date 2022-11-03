@@ -2,8 +2,7 @@ package com.example.bitok.data.network.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.example.bitok.data.network.ApiFactory.BASE_IMAGE_URL
-import com.example.bitok.utils.convertTimestampToTime
+
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
@@ -127,12 +126,4 @@ data class CoinInfoDto(
     @SerializedName("IMAGEURL")
     @Expose
     val imageUrl: String?
-) {
-    fun getFormattedTime(): String {
-        return convertTimestampToTime(lastUpdate)
-    }
-
-    fun getFullImageUrl(): String {
-        return BASE_IMAGE_URL + imageUrl
-    }
-}
+)
