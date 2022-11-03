@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/bitokButtonStyle">
         <activity android:name=".presentation.activity.CoinDetailActivity"/>
-        <activity android:name=".presentation.activity.CoinPriceListActivity">
+        <activity android:name=".presentation.activity.CoinPriceListActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
