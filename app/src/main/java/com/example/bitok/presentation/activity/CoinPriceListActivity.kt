@@ -14,7 +14,8 @@ class CoinPriceListActivity : AppCompatActivity() {
 
     private var _binding: ActivityCoinPriceListBinding? = null
     private val binding: ActivityCoinPriceListBinding
-    get() = _binding!!
+        get() = _binding!!
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = ActivityCoinPriceListBinding.inflate(layoutInflater)
@@ -22,7 +23,7 @@ class CoinPriceListActivity : AppCompatActivity() {
         adapter()
     }
 
-    private fun adapter()= with(binding){
+    private fun adapter() = with(binding) {
         val adapter = CoinInfoAdapter(this@CoinPriceListActivity)
         adapter.onCoinClickListener = object : CoinInfoAdapter.OnCoinClickListener {
             override fun onCoinClick(coinPriceInfo: CoinInfo) {
@@ -33,10 +34,11 @@ class CoinPriceListActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         }
-        binding.rvCoinPriceList.adapter = adapter
+        rvCoinPriceList.adapter = adapter
+        rvCoinPriceList.itemAnimator = null
         viewModel = ViewModelProvider(this@CoinPriceListActivity)[CoinViewModel::class.java]
         viewModel.coinInfoList.observe(this@CoinPriceListActivity) {
-            adapter.coinInfoList = it
+            adapter.submitList(it)
         }
     }
 
