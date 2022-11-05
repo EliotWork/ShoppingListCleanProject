@@ -26,7 +26,11 @@ class CoinPriceListFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentCoinPriceListBinding.inflate(layoutInflater, container, false)
+        _binding = FragmentCoinPriceListBinding.inflate(
+            layoutInflater,
+            container,
+            false
+        )
         return binding.root
     }
 

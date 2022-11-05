@@ -3,20 +3,20 @@ package com.example.bitok.data.repository
 import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Transformations
+import androidx.work.ExistingWorkPolicy
+import androidx.work.WorkManager
 import com.example.bitok.data.database.AppDatabase
 import com.example.bitok.data.mapper.CoinMapper
 import com.example.bitok.data.network.ApiFactory
 import com.example.bitok.domain.entity.CoinInfo
 import com.example.bitok.domain.repository.CoinRepository
-import kotlinx.coroutines.delay
+import com.example.bitok.workers.RefreshDataWorker
 
 class CoinRepositoryImpl(
     private val application: Application
 ) : CoinRepository {
 
     private val coinInfoDao = AppDatabase.getInstance(application).coinPriceInfoDao()
-    private val apiService = ApiFactory.apiService
-
     private val mapper = CoinMapper()
 
     override fun getCoinInfoList(): LiveData<List<CoinInfo>> {
@@ -33,19 +33,12 @@ class CoinRepositoryImpl(
         }
     }
 
-    override suspend fun loadData() {
-        while (true) {
-            try {
-                val topCoins = apiService.getTopCoinsInfo(limit = 50)
-                val fSyms = mapper.mapNameListToString(topCoins)
-                val jsonCointainer = apiService.getFullPriceList(fSyms = fSyms)
-                val coinInfoDtoList = mapper.mapJsonContainerToListCoinInfo(jsonCointainer)
-                val dbModelList = coinInfoDtoList.map { mapper.mapDtoToDbModel(it) }
-                coinInfoDao.insertPriceList(dbModelList)
-            } catch (e: Exception) {
-
-            }
-            delay(10000)
-        }
+    override fun loadData() {
+        val workManager = WorkManager.getInstance(application)
+        workManager.enqueueUniqueWork(
+            RefreshDataWorker.NAME,
+            ExistingWorkPolicy.REPLACE,
+            RefreshDataWorker.makerRequest()
+        )
     }
 }
