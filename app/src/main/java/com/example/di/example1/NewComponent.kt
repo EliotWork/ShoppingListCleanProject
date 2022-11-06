@@ -2,12 +2,8 @@ package com.example.di.example1
 
 import dagger.Component
 
-@Component
+@Component(modules = [ComputerModule::class])
 interface NewComponent {
-
-//    fun getKeyBoard():Keyboard
-//    fun getKeyMouse():Mouse
-//    fun getKeyMonitor():Monitor
 
     fun inject(activity: Activity)
 

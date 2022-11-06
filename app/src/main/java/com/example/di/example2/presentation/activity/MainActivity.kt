@@ -14,9 +14,7 @@ class MainActivity : AppCompatActivity() {
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val activity = Activity()
-        activity.keyboard.toString()
-        activity.mouse.toString()
-        activity.monitor.toString()
+        activity.computer.toString()
     }
 
 

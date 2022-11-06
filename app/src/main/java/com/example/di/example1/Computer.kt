@@ -1,5 +1,6 @@
 package com.example.di.example1
 
+import javax.inject.Inject
 
 
 class Computer(
@@ -7,7 +8,4 @@ class Computer(
     val computerTower: ComputerTower,
     val keyboard: Keyboard,
     val mouse: Mouse,
-) {
-
-
-}
+)

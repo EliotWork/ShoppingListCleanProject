@@ -1,4 +1,6 @@
 package com.example.di.example1
 
-class Processor {
+import javax.inject.Inject
+
+class Processor{
 }
