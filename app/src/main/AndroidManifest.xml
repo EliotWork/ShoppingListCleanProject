@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.bitok">
-
-    <uses-permission android:name="android.permission.INTERNET" />
+    package="com.example.di">
 
     <application
         android:allowBackup="true"
@@ -10,8 +8,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Bitok">
-        <activity android:name=".presentation.activity.MainActivity"
+        android:theme="@style/Theme.di">
+        <activity
+            android:name=".example2.presentation.activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
