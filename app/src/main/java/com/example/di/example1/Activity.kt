@@ -1,12 +1,19 @@
 package com.example.di.example1
 
+import javax.inject.Inject
+
 
 class Activity {
 
-    lateinit var keyboard: Keyboard
+     @Inject
+     lateinit var keyboard: Keyboard
+     @Inject
+     lateinit var mouse: Mouse
+     @Inject
+     lateinit var monitor: Monitor
 
-    init {
-        Component().inject(this)
-    }
+     init {
+          DaggerNewComponent.create().inject(this)
+     }
 
 }

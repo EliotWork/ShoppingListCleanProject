@@ -15,6 +15,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         val activity = Activity()
         activity.keyboard.toString()
+        activity.mouse.toString()
+        activity.monitor.toString()
     }
 
 
